@@ -111,11 +111,12 @@ class Tetrahedral:
         '''
 
         # use plot_theme.mplstyle to set plot theme
-        plt.style.use('./bandstructure/plot_theme.mplstyle')
+        plt.style.use('bandstructure/tight_binding/bandstructure/plot_theme.mplstyle')
         fig, ax = plt.subplots()
         x = np.linspace(0, len(path), len(path), endpoint=True)
         for i in range(8):
             ax.plot(x, bands[:, i])
+            
         # customizing plot
         xticks = [0, len(path)/4, len(path)/2, 3*len(path)/4, len(path)]
         ax.set_xticks(xticks, ['$L$', '$\Gamma$', 'X', 'U,K', '$\Gamma$'])
